@@ -17,12 +17,15 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
--   task: AzureResourceManagerTemplateDeployment@3
-    inputs:
-      deploymentScope: 'Management Group'
-      azureResourceManagerConnection: 'jnazuredevopsglobalconnection'
-      location: 'East US'
-      templateLocation: 'Linked artifact'
-      csmFile: '$(Build.SourcesDirectory)/docs/reference/wingtip/enterprise-scale-arm-template.json'
-      csmParametersFile: '$(Build.SourcesDirectory)/docs/reference/wingtip/e2e-landing-zone-foundation-orchestration.parameters.json'
-      deploymentMode: 'Validation'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Management Group'
+    azureResourceManagerConnection: 'jnazuredevopsglobalconnection'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    csmFile: '$(Build.SourcesDirectory)/docs/reference/wingtip/enterprise-scale-arm-template.json'
+    csmParametersFile: '$(Build.SourcesDirectory)/docs/reference/wingtip/e2e-landing-zone-foundation-orchestration.parameters.json'
+    overrideParameters: '-enterpriseScaleCompanyPrefix jncaf -managementSubscriptionId db713ee5-d359-4a56-bc58-989894d45ff6'
+    deploymentMode: 'Validation'
+    deploymentName: 'jncaflzplatform001'
+    addSpnToEnvironment: true
