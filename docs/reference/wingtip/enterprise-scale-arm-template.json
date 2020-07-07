@@ -59,10 +59,8 @@
     },
     "variables": {
         "nestedTemplatesLocation": {
-            // ARM templates from https://github.com/Azure/AzOps to facilitate end-to-end provisioning for all Azure scopes
             "tenantTemplate": "https://raw.githubusercontent.com/steenmeyer65/AzOps/main/template/tenant.json",
             "resourceTemplate": "https://raw.githubusercontent.com/steenmeyer65/AzOps/main/template/template.json",
-            // ARM templates for the different reference implementations in the Enterprise-Scale repository
             "foundationTemplateParameters": "[uri(parameters('_artifactsLocation'), concat('wingtip/e2e-landing-zone-foundation-orchestration.parameters.json', parameters('_artifactsLocationSasToken')))]",
             "vWanTemplateParameters": "[uri(parameters('_artifactsLocation'), concat('contoso/e2e-landing-zone-vwan-orchestration.parameters.json', parameters('_artifactsLocationSasToken')))]",
             "hubSpokeTemplateParameters": "[uri(parameters('_artifactsLocation'), concat('adventureworks/e2e-landing-zone-hubspoke-orchestration.parameters.json', parameters('_artifactsLocationSasToken')))]"
