@@ -25,7 +25,7 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: '$(Build.SourcesDirectory)/docs/reference/wingtip/enterprise-scale-arm-template.json'
     csmParametersFile: '$(Build.SourcesDirectory)/docs/reference/wingtip/e2e-landing-zone-foundation-orchestration.parameters.json'
-    overrideParameters: '-enterpriseScaleCompanyPrefix jncaf -setup Foundation -managementSubscriptionId db713ee5-d359-4a56-bc58-989894d45ff6 -enableResourceDeployments No'
+    overrideParameters: '-enterpriseScaleCompanyPrefix "jncaf" -setup "Foundation" -managementSubscriptionId "db713ee5-d359-4a56-bc58-989894d45ff6" -enableResourceDeployments "No"'
     deploymentMode: 'Validation'
     deploymentName: 'jncaflzplatform001'
     addSpnToEnvironment: true
